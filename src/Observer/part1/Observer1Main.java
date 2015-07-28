@@ -8,13 +8,12 @@ public class Observer1Main {
 
 		Product samsungMobile = new Product("Samsung", "Mobile", "Not available");
 
-		// When you opt for option "Notify me when product is available".Below 옵션을 사용하면 제품을 사용할 때 알린다.
-		// registerObserver method
-		// get executed
+		// 옵션을 사용하면 제품을 사용할 때 알린다.
+		// registerObserver method 옵저버를 등록하고 실행해본다.
 		samsungMobile.registerObserver(arpitPerson);
 		samsungMobile.registerObserver(johnPerson);
 
-		// Now product is available
+		// 지금 제품을 사용한다.
 		samsungMobile.setAvailability("Available");
 	}
 
