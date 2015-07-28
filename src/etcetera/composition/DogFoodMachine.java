@@ -27,7 +27,6 @@ public class DogFoodMachine {
 	public void runMachine(String dogSound) {
 		if (recognize(dogSound)) {
 			getDogFood();
-			System.out.println(dog.toString());
 		} else {
 			System.out.println("인식되지 않은 개입니다.");
 		}
