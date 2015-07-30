@@ -1,4 +1,4 @@
-package Observer.part1;
+package observer.part1;
 
 public class Observer1Main {
 
