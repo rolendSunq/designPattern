@@ -17,6 +17,11 @@ public class Memento4Main {
 		for(Memento mt : careTaker.getAll()) {
 			System.out.println(mt.toString());
 		}
+		careTaker.undo();
+		System.out.println("------after Undo------");
+		for(Memento mt : careTaker.getAll()) {
+			System.out.println(mt.toString());
+		}
 	}
 
 }

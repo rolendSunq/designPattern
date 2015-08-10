@@ -47,7 +47,7 @@ public class Gamer {
 	}
 
 	public void restoreMemento(Memento memento) { // undo ½ÇÇà
-		this.money = memento.money;
+		this.money = memento.getMoney();
 		this.fruits = memento.getFruits();
 	}
 

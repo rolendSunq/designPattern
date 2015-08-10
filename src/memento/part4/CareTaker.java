@@ -11,7 +11,7 @@ public class CareTaker {
 	}
 	
 	public void add(Memento state) {
-		mementoList.add(state);
+		mementoList.add(saveMemento(state));
 	}
 	
 	public Memento get(int index) {
@@ -21,4 +21,19 @@ public class CareTaker {
 	public List<Memento> getAll() {
 		return mementoList;
 	}
+	
+	public void undo() {
+		if (getAll().size() > 0) {
+			mementoList.remove(mementoList.size() - 1);
+		}
+		
+	}
+	
+	private Memento saveMemento(Memento memento) {
+		Memento tempMemento = new Memento(memento.getMoney());
+		tempMemento.setStateCommand(memento.getStateCommand());
+		tempMemento.setFruits(memento.getFruits());
+		return tempMemento;
+	}
+	
 }

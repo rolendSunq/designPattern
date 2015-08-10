@@ -3,9 +3,9 @@ package memento.part4;
 import java.util.*;
 
 public class Memento {
-	int money; 							// 소지금
-	ArrayList<String> fruits; 		// 과일
-	private String stateCommand;	// 실행 명령어 저장
+	private int money; // 소지금
+	private ArrayList<String> fruits; // 과일
+	private String stateCommand; // 실행 명령어 저장
 
 	Memento(int money) { // 생성자(wide interface)
 		this.money = money;
@@ -21,7 +21,7 @@ public class Memento {
 		fruits.add(fruit);
 		stateCommand = EnumCommand.ADDFRUIT.name();
 	}
-	
+
 	public boolean delFruit(String fruit) {
 		int fruitIndex = fruits.indexOf(fruit);
 		if (fruitIndex != -1) {
@@ -33,7 +33,7 @@ public class Memento {
 			return false;
 		}
 	}
-	
+
 	public void moneyAdjustment(int money, EnumCommand state) {
 		if (state.name().equals("PLUS")) {
 			this.money += money;
@@ -45,26 +45,44 @@ public class Memento {
 	}
 
 	@SuppressWarnings("unchecked")
-	List<String> getFruits() { // 과일을 얻는다(wide interface)
+	public List<String> getFruits() { // 과일을 얻는다(wide interface)
 		stateCommand = EnumCommand.GETFRUITS.name();
 		return (List<String>) fruits.clone();
 	}
+
+	public void setFruits(List<String> fruits) {
+		this.fruits = (ArrayList<String>) fruits;
+	}
 	
+	/**
+	 * @return the stateCommand
+	 */
+	public String getStateCommand() {
+		return stateCommand;
+	}
+
+	/**
+	 * @param stateCommand the stateCommand to set
+	 */
+	public void setStateCommand(String stateCommand) {
+		this.stateCommand = stateCommand;
+	}
+
 	@Override
 	public String toString() {
 		StringBuffer sb = new StringBuffer();
 		sb.append("money: " + money + "\r\n");
 		int index = 0;
+		sb.append("fruits[");
 		for (String str : fruits) {
-			if (index == 0) {
-				sb.append("fruits[" + str + ", ");
-			} else if (fruits.size() - 1 == index) {
-				sb.append(str + "]\r\n");
+			if (fruits.size() - 1 == index) {
+				sb.append(str);
 			} else {
 				sb.append(str + ", ");
 			}
 			index++;
 		}
+		sb.append("]\r\n");
 		sb.append("stateCommand: " + stateCommand + "\r\n");
 		sb.append("\r\n");
 		return sb.toString();
