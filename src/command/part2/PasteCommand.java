@@ -1,10 +1,11 @@
 package command.part2;
 
-public class PasteCommand extends AbstractCommand {
+public class PasteCommand<T> extends AbstractCommand<T> {
 	private Document document;
 	private int position;
 	private String pasteString;
 
+	@SuppressWarnings("unchecked")
 	public PasteCommand(Document document, int position) {
 		this.document = document;
 		this.position = position;
