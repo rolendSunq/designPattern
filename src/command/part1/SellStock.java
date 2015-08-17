@@ -1,11 +1,15 @@
 package command.part1;
 
 public class SellStock implements Order {
-	private Stock stock;
+	private Stock abcStock;
+	
+	public SellStock(Stock abcStock) {
+		this.abcStock = abcStock;
+	}
 	
 	@Override
 	public void execute() {
-		
+		abcStock.sell();
 	}
 
 }
