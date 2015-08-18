@@ -30,16 +30,18 @@ public class CommandManager<T> {
 		if (command.execute()) {
 			addToHistory(command);
 		} else {
-
+			System.out.println("존재하지 않는 명령어 입니다.");
 		}
 	}
 
+	@SuppressWarnings("unchecked")
 	private void addToHistory(AbstractCommand<T> command) {
 		history.addFirst((T) command);
 		if (history.size() > MAX_HISTORY_LENGTH)
 			history.removeLast();
 	}
 
+	@SuppressWarnings("unchecked")
 	private void redo() {
 		if (redoList.size() > 0) {
 			AbstractCommand<T> redoCommand = (AbstractCommand<T>) redoList.removeLast();
@@ -48,6 +50,7 @@ public class CommandManager<T> {
 		}
 	}
 
+	@SuppressWarnings("unchecked")
 	private void undo() {
 		if (history.size() > 0) { // 사용자가 실행한 명령어가 있을 경우
 			AbstractCommand<T> undoCommand = (AbstractCommand<T>) history.removeFirst();

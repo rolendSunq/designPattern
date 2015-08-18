@@ -1,6 +1,6 @@
 package command.part2;
 
-public class UndoCommnad<T> extends AbstractCommand<T>implements Undo {
+public class UndoCommand<T> extends AbstractCommand<T>implements Undo {
 
 	@Override
 	public boolean execute() {
