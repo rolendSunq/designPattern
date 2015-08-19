@@ -1,4 +1,4 @@
-package command.part3;
+package command.part4;
 
 public interface Command {
 	public void execute();
