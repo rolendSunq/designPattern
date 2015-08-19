@@ -2,9 +2,14 @@ package command.part3;
 
 public class Light {
 
-	public void on() {
-		// TODO Auto-generated method stub
-		
+	public Light() {
 	}
 
+	public void on() {
+		System.out.println("Light is on");
+	}
+
+	public void off() {
+		System.out.println("Light is off");
+	}
 }
