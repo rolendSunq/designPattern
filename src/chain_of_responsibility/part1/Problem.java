@@ -1,4 +1,4 @@
-package chain_of_resposibility.part1;
+package chain_of_responsibility.part1;
 /**
  * 전문가들이 풀어야할 문제 클래스
  * @author 삼실청년

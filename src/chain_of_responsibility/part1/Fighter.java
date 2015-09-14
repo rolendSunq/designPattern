@@ -1,4 +1,4 @@
-package chain_of_resposibility.part1;
+package chain_of_responsibility.part1;
 
 public class Fighter extends Expert {
 

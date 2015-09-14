@@ -1,4 +1,4 @@
-package chain_of_resposibility.part1;
+package chain_of_responsibility.part1;
 
 public abstract class Expert {
 	private Expert next;
@@ -17,9 +17,9 @@ public abstract class Expert {
 		}
 	}
 
-	public Expert setNext(Expert next) {
-		this.next = next;
-		return next;
+	public Expert next(Expert expert) {
+		this.next = expert;
+		return expert;
 	}
 
 	/**
